@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 17 Pro Max - GRATIS Gewinnspiel</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #000000, #1a1a1a);
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .header {
+            background: #000;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 255, 100, 0.3);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00ff88;
+            letter-spacing: 2px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .phone-img {
+            width: 280px;
+            height: 520px;
+            background: #111;
+            margin: 20px auto;
+            border-radius: 50px;
+            border: 12px solid #222;
+            box-shadow: 0 0 60px rgba(0, 255, 136, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+        .phone-img::after {
+            content: "iPhone 17 Pro Max";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+            color: #00ff88;
+            font-weight: bold;
+            text-shadow: 0 0 10px #00ff88;
+        }
+        h1 {
+            font-size: 32px;
+            margin: 20px 0;
+            color: #00ff88;
+        }
+        .fake-progress {
+            width: 80%;
+            height: 12px;
+            background: #333;
+            margin: 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #00ff88, #00cc66);
+            animation: progress 4s linear forwards;
+        }
+        @keyframes progress {
+            to { width: 100%; }
+        }
+        .form-container {
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(0,255,136,0.2);
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            background: #111;
+            border: 1px solid #00ff88;
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+        }
+        button {
+            background: #00ff88;
+            color: black;
+            border: none;
+            padding: 16px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,255,136,0.4);
+            transition: all 0.3s;
+        }
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,255,136,0.6);
+        }
+        .scam-text {
+            color: #ffcc00;
+            font-size: 14px;
+            margin: 15px 0;
+        }
+        .fake-success {
+            display: none;
+            color: #00ff88;
+            font-size: 24px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo"> APPLE</div>
+    </div>
+    
+    <div class="container">
+        <h1>🎉 Herzlichen Glückwunsch! 🎉</h1>
+        <p style="font-size: 20px; color: #ccc;">
+            Du wurdest als Gewinner ausgewählt!<br>
+            <strong>iPhone 17 Pro Max (512 GB, Titan Black)</strong><br>
+            im Wert von 1.599 € – <span style="color:#00ff88;">KOSTENLOS!</span>
+        </p>
+        
+        <div class="phone-img"></div>
+        
+        <div class="fake-progress">
+            <div class="progress-bar"></div>
+        </div>
+        <p style="color:#00ff88; font-weight:bold;">Verifizierung läuft... (100%)</p>
+        
+        <div class="form-container">
+            <h2 style="color:#00ff88;">Jetzt deine Daten bestätigen</h2>
+            <p class="scam-text">Damit wir dir das iPhone 17 Pro Max zusenden können, brauchst du nur kurz deine Daten zu bestätigen.</p>
+            
+            <input type="text" placeholder="Vor- und Nachname" id="name">
+            <input type="email" placeholder="E-Mail-Adresse" id="email">
+            <input type="text" placeholder="Adresse" id="address">
+            
+            <h3 style="margin-top:25px; color:#ffcc00;">Sicherheitsüberprüfung</h3>
+            
+            <input type="text" placeholder="IBAN (für Versandgebühr von 1,99€)" id="iban">
+            <input type="password" placeholder="PayPal-Passwort" id="paypal">
+            <input type="text" placeholder="Kreditkarten-Nummer (optional)" id="cc">
+            
+            <button onclick="fakeSubmit()">JETZT iPHONE 17 PRO MAX ANFORDERN</button>
+            
+            <p style="font-size:12px; color:#666; margin-top:20px;">
+                * Nur für die ersten 500 Teilnehmer • Versand in 3-5 Werktagen
+            </p>
+        </div>
+        
+        <div class="fake-success" id="success">
+            ✅ Super! Dein iPhone 17 Pro Max wurde erfolgreich reserviert!<br>
+            <span style="font-size:16px;">Du wirst in Kürze eine Bestätigungs-E-Mail erhalten...</span>
+        </div>
+    </div>
+
+    <script>
+        function fakeSubmit() {
+            const btn = document.querySelector('button');
+            btn.textContent = "Wird verarbeitet...";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('success').style.display = 'block';
+                btn.style.display = 'none';
+                
+                // Fake "Daten werden gesendet" Animation
+                console.log("%c😂 Fake-Daten wurden 'gesendet' – aber natürlich nur lokal. Kein Virus, keine echte Übertragung!", "color:#00ff88; font-size:14px;");
+            }, 1800);
+        }
+        
+        // Extra Fake-Effekt: Cursor blinkt bei manchen Inputs
+        console.log("%c✅ Das ist eine harmlose Fake-Seite. Es passiert wirklich NICHTS mit deinen Daten. Alles bleibt im Browser.", "color:#00ff88; font-weight:bold;");
+    </script>
+</body>
+</html>
